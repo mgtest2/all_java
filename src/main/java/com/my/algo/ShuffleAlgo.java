@@ -35,5 +35,24 @@ public class ShuffleAlgo {
 	}
 	
 	
+	public void fisherYate() {
+		
+			List<String> list = Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+			Random random = new Random();
+			for(int i=list.size()-1; i >= 0; i-- ) {
+				//System.out.println(i);
+				int randomIndex = random.nextInt(i+1);
+				String valudAtRandomIndex = list.get(randomIndex);
+				
+				String valueAtCurrentIndex = list.get(i);
+				
+				list.set(randomIndex, valueAtCurrentIndex); 
+				list.set(i, valudAtRandomIndex); 
+				
+				System.out.println("i = "+i+" - random -"+randomIndex+" - "+list);
+			}
+			
+	}
+	
 	
 }
